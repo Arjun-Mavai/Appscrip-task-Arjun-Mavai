@@ -35,15 +35,17 @@ export default function ProductCard({ product,prior }: ProductCardProps) {
     <div className="product-card">
       <Link href="#" className="product-link">
         <div className="product-image-container">
-          <Image
-            src={product.image || "/placeholder.svg"}
-            alt={product.title}
-            width={300}
-            height={300}
-            className="product-image"
-            priority={ prior}
-            loading={ prior ? "eager" : "lazy"}
-          />
+        <Image
+  src={product.image || "/placeholder.svg"}
+  alt={product.title}
+  width={300}
+  height={300}
+  className="product-image"
+  priority={prior}
+  loading={prior ? "eager" : "lazy"}
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"  
+  placeholder="blur"  
+/>
 
           {product.isNew && <div className="product-badge new">NEW PRODUCT</div>}
 
